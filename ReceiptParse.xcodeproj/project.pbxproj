@@ -1,0 +1,623 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		442917471CF70DF2007AF528 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 442917461CF70DF2007AF528 /* main.m */; };
+		4429174A1CF70DF2007AF528 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 442917491CF70DF2007AF528 /* AppDelegate.m */; };
+		4429174D1CF70DF2007AF528 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4429174C1CF70DF2007AF528 /* ViewController.m */; };
+		442917501CF70DF2007AF528 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4429174E1CF70DF2007AF528 /* Main.storyboard */; };
+		442917521CF70DF2007AF528 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 442917511CF70DF2007AF528 /* Assets.xcassets */; };
+		442917551CF70DF2007AF528 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 442917531CF70DF2007AF528 /* LaunchScreen.storyboard */; };
+		442917601CF70DF2007AF528 /* ReceiptParseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4429175F1CF70DF2007AF528 /* ReceiptParseTests.m */; };
+		4429176B1CF70DF2007AF528 /* ReceiptParseUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4429176A1CF70DF2007AF528 /* ReceiptParseUITests.m */; };
+		4429177A1CF70E30007AF528 /* sandboxReceipt in Resources */ = {isa = PBXBuildFile; fileRef = 442917791CF70E30007AF528 /* sandboxReceipt */; };
+		4429177D1CF70E4D007AF528 /* ReceiptParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4429177C1CF70E4D007AF528 /* ReceiptParser.m */; };
+		442917811CF83CEF007AF528 /* AppleIncRootCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 442917801CF83CEF007AF528 /* AppleIncRootCertificate.cer */; };
+		B74926E96AB687E99E8AE0A2 /* libPods-ReceiptParse.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E42DC63E935C82C2F837D107 /* libPods-ReceiptParse.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4429175C1CF70DF2007AF528 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4429173A1CF70DF2007AF528 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 442917411CF70DF2007AF528;
+			remoteInfo = ReceiptParse;
+		};
+		442917671CF70DF2007AF528 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4429173A1CF70DF2007AF528 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 442917411CF70DF2007AF528;
+			remoteInfo = ReceiptParse;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2D31DF48A6F4EA36CE5FB944 /* Pods-ReceiptParse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReceiptParse.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReceiptParse/Pods-ReceiptParse.release.xcconfig"; sourceTree = "<group>"; };
+		442917421CF70DF2007AF528 /* ReceiptParse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReceiptParse.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		442917461CF70DF2007AF528 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		442917481CF70DF2007AF528 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		442917491CF70DF2007AF528 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4429174B1CF70DF2007AF528 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		4429174C1CF70DF2007AF528 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4429174F1CF70DF2007AF528 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		442917511CF70DF2007AF528 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		442917541CF70DF2007AF528 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		442917561CF70DF2007AF528 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4429175B1CF70DF2007AF528 /* ReceiptParseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReceiptParseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4429175F1CF70DF2007AF528 /* ReceiptParseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReceiptParseTests.m; sourceTree = "<group>"; };
+		442917611CF70DF2007AF528 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		442917661CF70DF2007AF528 /* ReceiptParseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReceiptParseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4429176A1CF70DF2007AF528 /* ReceiptParseUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReceiptParseUITests.m; sourceTree = "<group>"; };
+		4429176C1CF70DF2007AF528 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		442917791CF70E30007AF528 /* sandboxReceipt */ = {isa = PBXFileReference; lastKnownFileType = file; path = sandboxReceipt; sourceTree = "<group>"; };
+		4429177B1CF70E4D007AF528 /* ReceiptParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceiptParser.h; sourceTree = "<group>"; };
+		4429177C1CF70E4D007AF528 /* ReceiptParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceiptParser.m; sourceTree = "<group>"; };
+		442917801CF83CEF007AF528 /* AppleIncRootCertificate.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleIncRootCertificate.cer; sourceTree = "<group>"; };
+		E42DC63E935C82C2F837D107 /* libPods-ReceiptParse.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReceiptParse.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E758B1F02EFD1F21A1C3F268 /* Pods-ReceiptParse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReceiptParse.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReceiptParse/Pods-ReceiptParse.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4429173F1CF70DF2007AF528 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B74926E96AB687E99E8AE0A2 /* libPods-ReceiptParse.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		442917581CF70DF2007AF528 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		442917631CF70DF2007AF528 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		442917391CF70DF2007AF528 = {
+			isa = PBXGroup;
+			children = (
+				442917441CF70DF2007AF528 /* ReceiptParse */,
+				4429175E1CF70DF2007AF528 /* ReceiptParseTests */,
+				442917691CF70DF2007AF528 /* ReceiptParseUITests */,
+				442917431CF70DF2007AF528 /* Products */,
+				97CB3450C6E0BD1695F6EC0F /* Pods */,
+				6DB618C4A67B6821916281A6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		442917431CF70DF2007AF528 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				442917421CF70DF2007AF528 /* ReceiptParse.app */,
+				4429175B1CF70DF2007AF528 /* ReceiptParseTests.xctest */,
+				442917661CF70DF2007AF528 /* ReceiptParseUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		442917441CF70DF2007AF528 /* ReceiptParse */ = {
+			isa = PBXGroup;
+			children = (
+				442917781CF70E30007AF528 /* Resource */,
+				442917481CF70DF2007AF528 /* AppDelegate.h */,
+				442917491CF70DF2007AF528 /* AppDelegate.m */,
+				4429177B1CF70E4D007AF528 /* ReceiptParser.h */,
+				4429177C1CF70E4D007AF528 /* ReceiptParser.m */,
+				4429174B1CF70DF2007AF528 /* ViewController.h */,
+				4429174C1CF70DF2007AF528 /* ViewController.m */,
+				4429174E1CF70DF2007AF528 /* Main.storyboard */,
+				442917511CF70DF2007AF528 /* Assets.xcassets */,
+				442917531CF70DF2007AF528 /* LaunchScreen.storyboard */,
+				442917561CF70DF2007AF528 /* Info.plist */,
+				442917451CF70DF2007AF528 /* Supporting Files */,
+			);
+			path = ReceiptParse;
+			sourceTree = "<group>";
+		};
+		442917451CF70DF2007AF528 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				442917461CF70DF2007AF528 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4429175E1CF70DF2007AF528 /* ReceiptParseTests */ = {
+			isa = PBXGroup;
+			children = (
+				4429175F1CF70DF2007AF528 /* ReceiptParseTests.m */,
+				442917611CF70DF2007AF528 /* Info.plist */,
+			);
+			path = ReceiptParseTests;
+			sourceTree = "<group>";
+		};
+		442917691CF70DF2007AF528 /* ReceiptParseUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4429176A1CF70DF2007AF528 /* ReceiptParseUITests.m */,
+				4429176C1CF70DF2007AF528 /* Info.plist */,
+			);
+			path = ReceiptParseUITests;
+			sourceTree = "<group>";
+		};
+		442917781CF70E30007AF528 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				442917791CF70E30007AF528 /* sandboxReceipt */,
+				442917801CF83CEF007AF528 /* AppleIncRootCertificate.cer */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		6DB618C4A67B6821916281A6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E42DC63E935C82C2F837D107 /* libPods-ReceiptParse.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		97CB3450C6E0BD1695F6EC0F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E758B1F02EFD1F21A1C3F268 /* Pods-ReceiptParse.debug.xcconfig */,
+				2D31DF48A6F4EA36CE5FB944 /* Pods-ReceiptParse.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		442917411CF70DF2007AF528 /* ReceiptParse */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4429176F1CF70DF2007AF528 /* Build configuration list for PBXNativeTarget "ReceiptParse" */;
+			buildPhases = (
+				C2CA902527DB4F4CF5FD3ADA /* 📦 Check Pods Manifest.lock */,
+				4429173E1CF70DF2007AF528 /* Sources */,
+				4429173F1CF70DF2007AF528 /* Frameworks */,
+				442917401CF70DF2007AF528 /* Resources */,
+				3DAA04CBC76877980893B1E2 /* 📦 Embed Pods Frameworks */,
+				6AA30B5DECFEFA336A851F20 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ReceiptParse;
+			productName = ReceiptParse;
+			productReference = 442917421CF70DF2007AF528 /* ReceiptParse.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4429175A1CF70DF2007AF528 /* ReceiptParseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 442917721CF70DF2007AF528 /* Build configuration list for PBXNativeTarget "ReceiptParseTests" */;
+			buildPhases = (
+				442917571CF70DF2007AF528 /* Sources */,
+				442917581CF70DF2007AF528 /* Frameworks */,
+				442917591CF70DF2007AF528 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4429175D1CF70DF2007AF528 /* PBXTargetDependency */,
+			);
+			name = ReceiptParseTests;
+			productName = ReceiptParseTests;
+			productReference = 4429175B1CF70DF2007AF528 /* ReceiptParseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		442917651CF70DF2007AF528 /* ReceiptParseUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 442917751CF70DF2007AF528 /* Build configuration list for PBXNativeTarget "ReceiptParseUITests" */;
+			buildPhases = (
+				442917621CF70DF2007AF528 /* Sources */,
+				442917631CF70DF2007AF528 /* Frameworks */,
+				442917641CF70DF2007AF528 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				442917681CF70DF2007AF528 /* PBXTargetDependency */,
+			);
+			name = ReceiptParseUITests;
+			productName = ReceiptParseUITests;
+			productReference = 442917661CF70DF2007AF528 /* ReceiptParseUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4429173A1CF70DF2007AF528 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = FatGragon;
+				TargetAttributes = {
+					442917411CF70DF2007AF528 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					4429175A1CF70DF2007AF528 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 442917411CF70DF2007AF528;
+					};
+					442917651CF70DF2007AF528 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 442917411CF70DF2007AF528;
+					};
+				};
+			};
+			buildConfigurationList = 4429173D1CF70DF2007AF528 /* Build configuration list for PBXProject "ReceiptParse" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 442917391CF70DF2007AF528;
+			productRefGroup = 442917431CF70DF2007AF528 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				442917411CF70DF2007AF528 /* ReceiptParse */,
+				4429175A1CF70DF2007AF528 /* ReceiptParseTests */,
+				442917651CF70DF2007AF528 /* ReceiptParseUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		442917401CF70DF2007AF528 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				442917551CF70DF2007AF528 /* LaunchScreen.storyboard in Resources */,
+				4429177A1CF70E30007AF528 /* sandboxReceipt in Resources */,
+				442917521CF70DF2007AF528 /* Assets.xcassets in Resources */,
+				442917811CF83CEF007AF528 /* AppleIncRootCertificate.cer in Resources */,
+				442917501CF70DF2007AF528 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		442917591CF70DF2007AF528 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		442917641CF70DF2007AF528 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3DAA04CBC76877980893B1E2 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReceiptParse/Pods-ReceiptParse-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6AA30B5DECFEFA336A851F20 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReceiptParse/Pods-ReceiptParse-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2CA902527DB4F4CF5FD3ADA /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4429173E1CF70DF2007AF528 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4429174D1CF70DF2007AF528 /* ViewController.m in Sources */,
+				4429174A1CF70DF2007AF528 /* AppDelegate.m in Sources */,
+				442917471CF70DF2007AF528 /* main.m in Sources */,
+				4429177D1CF70E4D007AF528 /* ReceiptParser.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		442917571CF70DF2007AF528 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				442917601CF70DF2007AF528 /* ReceiptParseTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		442917621CF70DF2007AF528 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4429176B1CF70DF2007AF528 /* ReceiptParseUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4429175D1CF70DF2007AF528 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 442917411CF70DF2007AF528 /* ReceiptParse */;
+			targetProxy = 4429175C1CF70DF2007AF528 /* PBXContainerItemProxy */;
+		};
+		442917681CF70DF2007AF528 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 442917411CF70DF2007AF528 /* ReceiptParse */;
+			targetProxy = 442917671CF70DF2007AF528 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4429174E1CF70DF2007AF528 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4429174F1CF70DF2007AF528 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		442917531CF70DF2007AF528 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				442917541CF70DF2007AF528 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4429176D1CF70DF2007AF528 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4429176E1CF70DF2007AF528 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		442917701CF70DF2007AF528 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E758B1F02EFD1F21A1C3F268 /* Pods-ReceiptParse.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ReceiptParse/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = FG.ReceiptParse;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		442917711CF70DF2007AF528 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D31DF48A6F4EA36CE5FB944 /* Pods-ReceiptParse.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ReceiptParse/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = FG.ReceiptParse;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		442917731CF70DF2007AF528 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ReceiptParseTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = FG.ReceiptParseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReceiptParse.app/ReceiptParse";
+			};
+			name = Debug;
+		};
+		442917741CF70DF2007AF528 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ReceiptParseTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = FG.ReceiptParseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReceiptParse.app/ReceiptParse";
+			};
+			name = Release;
+		};
+		442917761CF70DF2007AF528 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ReceiptParseUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = FG.ReceiptParseUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ReceiptParse;
+			};
+			name = Debug;
+		};
+		442917771CF70DF2007AF528 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ReceiptParseUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = FG.ReceiptParseUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ReceiptParse;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4429173D1CF70DF2007AF528 /* Build configuration list for PBXProject "ReceiptParse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4429176D1CF70DF2007AF528 /* Debug */,
+				4429176E1CF70DF2007AF528 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4429176F1CF70DF2007AF528 /* Build configuration list for PBXNativeTarget "ReceiptParse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				442917701CF70DF2007AF528 /* Debug */,
+				442917711CF70DF2007AF528 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		442917721CF70DF2007AF528 /* Build configuration list for PBXNativeTarget "ReceiptParseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				442917731CF70DF2007AF528 /* Debug */,
+				442917741CF70DF2007AF528 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		442917751CF70DF2007AF528 /* Build configuration list for PBXNativeTarget "ReceiptParseUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				442917761CF70DF2007AF528 /* Debug */,
+				442917771CF70DF2007AF528 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4429173A1CF70DF2007AF528 /* Project object */;
+}
