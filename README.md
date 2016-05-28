@@ -10,3 +10,5 @@ code for this site https://www.objc.io/issues/17-security/receipt-validation/
   
   其实我写完代码了，对这个指针语法，还不是太清晰，完全只是机械的模仿，搞定的。
   
+
+  安全起见，没有直接把这个文件sandboxReceipt，给传上来，编译会报错，需要自己拖一个进目录。
