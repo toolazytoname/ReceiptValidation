@@ -15,9 +15,9 @@
 		442917551CF70DF2007AF528 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 442917531CF70DF2007AF528 /* LaunchScreen.storyboard */; };
 		442917601CF70DF2007AF528 /* ReceiptParseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4429175F1CF70DF2007AF528 /* ReceiptParseTests.m */; };
 		4429176B1CF70DF2007AF528 /* ReceiptParseUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4429176A1CF70DF2007AF528 /* ReceiptParseUITests.m */; };
-		4429177A1CF70E30007AF528 /* sandboxReceipt in Resources */ = {isa = PBXBuildFile; fileRef = 442917791CF70E30007AF528 /* sandboxReceipt */; };
 		4429177D1CF70E4D007AF528 /* ReceiptParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4429177C1CF70E4D007AF528 /* ReceiptParser.m */; };
 		442917811CF83CEF007AF528 /* AppleIncRootCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 442917801CF83CEF007AF528 /* AppleIncRootCertificate.cer */; };
+		4446D5AB1CF89AC80049DE3A /* sandboxReceipt in Resources */ = {isa = PBXBuildFile; fileRef = 4446D5AA1CF89AC80049DE3A /* sandboxReceipt */; };
 		B74926E96AB687E99E8AE0A2 /* libPods-ReceiptParse.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E42DC63E935C82C2F837D107 /* libPods-ReceiptParse.a */; };
 /* End PBXBuildFile section */
 
@@ -56,10 +56,10 @@
 		442917661CF70DF2007AF528 /* ReceiptParseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReceiptParseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4429176A1CF70DF2007AF528 /* ReceiptParseUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReceiptParseUITests.m; sourceTree = "<group>"; };
 		4429176C1CF70DF2007AF528 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		442917791CF70E30007AF528 /* sandboxReceipt */ = {isa = PBXFileReference; lastKnownFileType = file; path = sandboxReceipt; sourceTree = "<group>"; };
 		4429177B1CF70E4D007AF528 /* ReceiptParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceiptParser.h; sourceTree = "<group>"; };
 		4429177C1CF70E4D007AF528 /* ReceiptParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceiptParser.m; sourceTree = "<group>"; };
 		442917801CF83CEF007AF528 /* AppleIncRootCertificate.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleIncRootCertificate.cer; sourceTree = "<group>"; };
+		4446D5AA1CF89AC80049DE3A /* sandboxReceipt */ = {isa = PBXFileReference; lastKnownFileType = file; name = sandboxReceipt; path = ../../../../../Desktop/sandboxReceipt; sourceTree = "<group>"; };
 		E42DC63E935C82C2F837D107 /* libPods-ReceiptParse.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReceiptParse.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E758B1F02EFD1F21A1C3F268 /* Pods-ReceiptParse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReceiptParse.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReceiptParse/Pods-ReceiptParse.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,7 +160,7 @@
 		442917781CF70E30007AF528 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				442917791CF70E30007AF528 /* sandboxReceipt */,
+				4446D5AA1CF89AC80049DE3A /* sandboxReceipt */,
 				442917801CF83CEF007AF528 /* AppleIncRootCertificate.cer */,
 			);
 			path = Resource;
@@ -290,9 +290,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				442917551CF70DF2007AF528 /* LaunchScreen.storyboard in Resources */,
-				4429177A1CF70E30007AF528 /* sandboxReceipt in Resources */,
 				442917521CF70DF2007AF528 /* Assets.xcassets in Resources */,
 				442917811CF83CEF007AF528 /* AppleIncRootCertificate.cer in Resources */,
+				4446D5AB1CF89AC80049DE3A /* sandboxReceipt in Resources */,
 				442917501CF70DF2007AF528 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

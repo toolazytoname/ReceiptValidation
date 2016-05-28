@@ -82,10 +82,11 @@
     const unsigned char *ptr = octets->data;
     const unsigned char *end = ptr + octets->length;
     const unsigned char *str_ptr;
+    const unsigned char *small_str_ptr;
     
-    int type = 0, str_type = 0;
-    int xclass = 0, str_xclass = 0;
-    long length = 0, str_length = 0;
+    int type = 0, str_type = 0, small_str_type = 0;
+    int xclass = 0, str_xclass = 0, small_str_xclass = 0;
+    long length = 0, str_length = 0, small_str_length = 0;
     
     // Store for the receipt information
     NSString *bundleIdString = nil;
@@ -93,28 +94,28 @@
     NSData *bundleIdData = nil;
     NSData *hashData = nil;
     NSData *opaqueData = nil;
+    //weichao add
     NSDate *expirationDate = nil;
+    NSDate *creationDate = nil;
+    NSString *originalVersionString = nil;
     
     // Date formatter to handle RFC 3339 dates in GMT time zone
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
     [formatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
-    
     // Decode payload (a SET is expected)
     ASN1_get_object(&ptr, &length, &type, &xclass, end - ptr);
     if (type != V_ASN1_SET) {
         // Validation fails
     }
-    
     while (ptr < end) {
         ASN1_INTEGER *integer;
-        
+
         // Parse the attribute sequence (a SEQUENCE is expected)
         ASN1_get_object(&ptr, &length, &type, &xclass, end - ptr);
         if (type != V_ASN1_SEQUENCE) {
             // Validation fails
         }
-        
         const unsigned char *seq_end = ptr + length;
         long attr_type = 0;
         long attr_version = 0;
@@ -142,7 +143,7 @@
         if (type != V_ASN1_OCTET_STRING) {
             // Validation fails
         }
-        
+        NSLog(@"enumerate Payload begin attr type:%li",attr_type);
         switch (attr_type) {
             case 2:
                 // Bundle identifier
@@ -153,6 +154,7 @@
                     // The raw is data will be used when computing the GUID hash
                     bundleIdString = [[NSString alloc] initWithBytes:str_ptr length:str_length encoding:NSUTF8StringEncoding];
                     bundleIdData = [[NSData alloc] initWithBytes:(const void *)ptr length:length];
+                    NSLog(@"bundleIdString:%@",bundleIdString);
                 }
                 break;
                 
@@ -163,6 +165,7 @@
                 if (str_type == V_ASN1_UTF8STRING) {
                     // We store the decoded string for later
                     bundleVersionString = [[NSString alloc] initWithBytes:str_ptr length:str_length encoding:NSUTF8StringEncoding];
+                    NSLog(@"bundleVersionString:%@",bundleVersionString);
                 }
                 break;
                 
@@ -184,29 +187,156 @@
                     // The date is stored as a string that needs to be parsed
                     NSString *dateString = [[NSString alloc] initWithBytes:str_ptr length:str_length encoding:NSASCIIStringEncoding];
                     expirationDate = [formatter dateFromString:dateString];
+                    NSLog(@"expirationDate:%@",expirationDate);
                 }
                 break;
                 
                 // You can parse more attributes...
-                
-            default:
-                //weichao add
+                // so i parse more attributes...
+            case 12:
+                // creationDate date
                 str_ptr = ptr;
                 ASN1_get_object(&str_ptr, &str_length, &str_type, &str_xclass, seq_end - str_ptr);
-                NSString *defaultString;
                 if (str_type == V_ASN1_IA5STRING) {
                     // The date is stored as a string that needs to be parsed
-                    defaultString = [[NSString alloc] initWithBytes:str_ptr length:str_length encoding:NSASCIIStringEncoding];
+                    NSString *dateString = [[NSString alloc] initWithBytes:str_ptr length:str_length encoding:NSASCIIStringEncoding];
+                    creationDate = [formatter dateFromString:dateString];
+                    NSLog(@"creationDate:%@",creationDate);
                 }
+                break;
+
+            case 19:
+                //Original Application Version
+                str_ptr = ptr;
+                ASN1_get_object(&str_ptr, &str_length, &str_type, &str_xclass, seq_end - str_ptr);
                 if (str_type == V_ASN1_UTF8STRING) {
                     // We store the decoded string for later
-                    defaultString = [[NSString alloc] initWithBytes:str_ptr length:str_length encoding:NSUTF8StringEncoding];
+                    originalVersionString = [[NSString alloc] initWithBytes:str_ptr length:str_length encoding:NSUTF8StringEncoding];
+                    NSLog(@"originalVersionString:%@",originalVersionString);
                 }
-                NSData *defaultData = [[NSData alloc] initWithBytes:(const void *)ptr length:length];
-                NSLog(@"weichaotest attr_type:%li str_type:%i defaultString:%@;\n defaultData:%@",attr_type,str_type,defaultString,defaultData);
+                break;
+            case 17:
+                str_ptr = ptr;
+                ASN1_get_object(&str_ptr, &str_length, &str_type, &str_xclass, seq_end - str_ptr);
+                if (str_type != V_ASN1_SET) {
+                    // Validation fails
+                    NSLog(@"str_type != V_ASN1_SET");
+                }
+                NSLog(@"enumerate in_app parse begin");
+                while (str_ptr < seq_end) {
+                    ASN1_INTEGER *small_integer;
+                    // Parse the attribute sequence (a SEQUENCE is expected)
+                    ASN1_get_object(&str_ptr, &str_length, &str_type, &str_xclass, seq_end - str_ptr);
+                    if (str_type != V_ASN1_SEQUENCE) {
+                        // Validation fails
+                    }
+                    const unsigned char *small_seq_end = str_ptr + str_length;
+                    long small_attr_type = 0;
+                    long small_attr_version = 0;
+                    
+                    // Parse the attribute type (an INTEGER is expected)
+                    ASN1_get_object(&str_ptr, &str_length, &str_type, &str_xclass, seq_end - str_ptr);
+                    if (str_type != V_ASN1_INTEGER) {
+                        // Validation fails
+                    }
+                    small_integer = c2i_ASN1_INTEGER(NULL, &str_ptr, str_length);
+                    small_attr_type = ASN1_INTEGER_get(small_integer);
+                    ASN1_INTEGER_free(small_integer);
+                    
+                    // Parse the attribute version (an INTEGER is expected)
+                    ASN1_get_object(&str_ptr, &str_length, &str_type, &str_xclass, seq_end - str_ptr);
+                    if (str_type != V_ASN1_INTEGER) {
+                        // Validation fails
+                    }
+                    small_integer = c2i_ASN1_INTEGER(NULL, &str_ptr, str_length);
+                    small_attr_version = ASN1_INTEGER_get(small_integer);
+                    ASN1_INTEGER_free(small_integer);
+                    
+                    // Check the attribute value (an OCTET STRING is expected)
+                    ASN1_get_object(&str_ptr, &str_length, &str_type, &str_xclass, seq_end - str_ptr);
+                    if (str_type != V_ASN1_OCTET_STRING) {
+                        // Validation fails
+                    }
+                    NSLog(@"enumerate Receipt attr type begin:%li",small_attr_type);
+                    switch (small_attr_type) {
+                        case 1701:
+                            small_str_ptr = str_ptr;
+                            ASN1_get_object(&small_str_ptr, &small_str_length, &small_str_type, &small_str_xclass, small_seq_end - small_str_ptr);
+                            if (small_str_type == V_ASN1_INTEGER) {
+                                NSString *UTF8String = [[NSString alloc] initWithBytes:small_str_ptr length:small_str_length encoding:NSUTF8StringEncoding];
+                                NSLog(@"quantity:%@",UTF8String);
+                            }
 
+                            break;
+                        case 1702:
+                            small_str_ptr = str_ptr;
+                            ASN1_get_object(&small_str_ptr, &small_str_length, &small_str_type, &small_str_xclass, small_seq_end - small_str_ptr);
+                            if (small_str_type == V_ASN1_UTF8STRING) {
+                                NSString *UTF8String = [[NSString alloc] initWithBytes:small_str_ptr length:small_str_length encoding:NSUTF8StringEncoding];
+                                NSLog(@"product_id:%@",UTF8String);
+                            }
+                            
+                            break;
+                        case 1703:
+                            small_str_ptr = str_ptr;
+                            ASN1_get_object(&small_str_ptr, &small_str_length, &small_str_type, &small_str_xclass, small_seq_end - small_str_ptr);
+                            if (small_str_type == V_ASN1_UTF8STRING) {
+                                NSString *UTF8String = [[NSString alloc] initWithBytes:small_str_ptr length:small_str_length encoding:NSUTF8StringEncoding];
+                                NSLog(@"transaction_id:%@",UTF8String);
+                            }
+                            
+                            break;
+                        case 1705:
+                            small_str_ptr = str_ptr;
+                            ASN1_get_object(&small_str_ptr, &small_str_length, &small_str_type, &small_str_xclass, small_seq_end - small_str_ptr);
+                            if (small_str_type == V_ASN1_UTF8STRING) {
+                                NSString *UTF8String = [[NSString alloc] initWithBytes:small_str_ptr length:small_str_length encoding:NSUTF8StringEncoding];
+                                NSLog(@"original_transaction_id:%@",UTF8String);
+                            }
+                            
+                            break;
+                            
+                        case 1704:
+                            small_str_ptr = str_ptr;
+                            ASN1_get_object(&small_str_ptr, &small_str_length, &small_str_type, &small_str_xclass, small_seq_end - small_str_ptr);
+                            if (small_str_type == V_ASN1_IA5STRING) {
+                                NSString *ASCIIString = [[NSString alloc] initWithBytes:small_str_ptr length:small_str_length encoding:NSASCIIStringEncoding];
+                                NSLog(@"purchase_date:%@",ASCIIString);
+                            }
+                            break;
+                            
+                        case 1706:
+                            small_str_ptr = str_ptr;
+                            ASN1_get_object(&small_str_ptr, &small_str_length, &small_str_type, &small_str_xclass, small_seq_end - small_str_ptr);
+                            if (small_str_type == V_ASN1_IA5STRING) {
+                                NSString *ASCIIString = [[NSString alloc] initWithBytes:small_str_ptr length:small_str_length encoding:NSASCIIStringEncoding];
+                                NSLog(@"original_purchase_date:%@",ASCIIString);
+                            }
+                            break;
+                        case 1708:
+                            small_str_ptr = str_ptr;
+                            ASN1_get_object(&small_str_ptr, &small_str_length, &small_str_type, &small_str_xclass, small_seq_end - small_str_ptr);
+                            if (small_str_type == V_ASN1_IA5STRING) {
+                                NSString *ASCIIString = [[NSString alloc] initWithBytes:small_str_ptr length:small_str_length encoding:NSASCIIStringEncoding];
+                                NSLog(@"expires_date:%@",ASCIIString);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                    NSLog(@"enumerate Receipt attr type end:%li",small_attr_type);
+
+                    // Move past the value
+                    str_ptr += str_length;
+                }
+                NSLog(@"enumerate in_app parse end");
+                break;
+
+
+            default:
                 break;
         }
+        NSLog(@"enumerate Payload end attr type:%li",attr_type);
         
         // Move past the value
         ptr += length;
@@ -219,8 +349,12 @@
         hashData == nil) {
         // Validation fails
     }
-    NSLog(@"weichaotest bundleIdString:%@;\nbundleVersionString:%@;\nopaqueData:%@;\nhashData:%@;\n",bundleIdString,bundleVersionString,opaqueData,hashData);
-
+//    NSLog(@"weichaotest bundleIdString:%@;\nbundleVersionString:%@;\n",bundleIdString,bundleVersionString);
+//    NSLog(@"creationDate:%@",creationDate);
+//    NSLog(@"expirationDate:%@",expirationDate);
+//    NSLog(@"originalVersionString:%@",originalVersionString);
+//    NSLog(@"opaqueData:%@",opaqueData);
+//    NSLog(@"hashData:%@",hashData);
 }
 
 - (void)verifyInformation:(NSString *)bundleIdString bundleVersionString:(NSString *)bundleVersionString {
